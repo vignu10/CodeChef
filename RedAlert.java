@@ -40,6 +40,7 @@ Example case 1:
 On the first day, the water level of the city increases to 1 millimtre.
 On the second day, the water level increases by 3 millimeters and becomes 1+3=4 millimtres.
 On the third day, there is no rain in the city, so the water level decreases by D=2 millimtres and becomes 4−2=2 millimtres.
+
 On the fourth day, the water level increases by 2 millimtres and becomes 2+2=4 millimtres.
 There will be no red alert in the city because the water level does not exceed H=6 millimtres on any of the four days.
 
@@ -51,4 +52,50 @@ Example case 4: There will be a red alert in the city on the 3-rd day.
 
 */
 
+ package codechef; // don't place package name! 
 
+
+import java.util.Scanner;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	    try{
+	   Scanner sc=new Scanner(System.in);
+	   int t;
+	   t=sc.nextInt();
+	  
+	   while(t-->0)
+	   {
+ 
+	   int n=sc.nextInt();
+	   int d=sc.nextInt();
+	   int h=sc.nextInt();
+	   int rain=0;
+       boolean redalert=false;
+       for(int i=0;i<n;i++)
+       {
+         int r=sc.nextInt();
+         if(r>0)
+           rain+=r;
+         else if(r==0)
+           rain-=d;
+         if(rain<-)
+           rain=0;
+         if(rain>h)
+           redalert=true;
+       }
+       if(redalert==true)
+         System.out.println("Yes");
+       else
+         System.out.println("No");
+     }
+      }catch(Execution e) {
+      }
+  }
+}
+	       
+	 
